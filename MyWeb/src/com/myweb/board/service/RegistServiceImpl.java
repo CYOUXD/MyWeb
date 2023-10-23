@@ -27,9 +27,10 @@ public class RegistServiceImpl implements IBoardService {
 		
 		//이미지 업로드 작업용
 		String img = request.getParameter("image");
-		System.out.println(img);
+//		System.out.println(img);
 		File image = new File(img);
-		System.out.println("image의 실제 위치 : "+image.getPath());
+		dao.imgUp(image);
+//		System.out.println("image의 실제 위치 : "+image.getPath());
 	}
 
 }

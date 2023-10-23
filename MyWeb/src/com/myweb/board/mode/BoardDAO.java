@@ -1,5 +1,6 @@
 package com.myweb.board.mode;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -234,6 +235,21 @@ public class BoardDAO {
 		
 	}
 	
+	//이미지 파일 업로드
+	public void imgUp(File image) {
+		String sql = "insert into images(image) vlues(?)";
+		
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setObject(1, image);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			JdbcUtil.close(conn, pstmt, rs);
+		}
+	}
 	
 
 }
