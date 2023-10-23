@@ -65,6 +65,10 @@ public class BoardController extends HttpServlet {
 			//GetListServiceImple에서 전달 받은 request 강제 저장된 list를 포워드(=값을 넘길 때는 포워드)
 			RequestDispatcher dp = request.getRequestDispatcher("board_list.jsp");
 			dp.forward(request, response);
+			
+			//원래 이 곳은 리다이렉트만 해도 되는 곳. 그런데 페이징 처리할 데이터를 받아서 출력하려면
+			//GetListServiceImpl에서 페이징 처리한 데이터를 받아서 현재 페이지에서 표시해줘야 하기 때문에
+			//포워드로 바꾼 것
 
 		}else if(command.equals("/board/write.board")) {
 			//글 작성 페이지(view)로 이동

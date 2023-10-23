@@ -5,8 +5,8 @@
     if(session.getAttribute("user_id") == null) {
     	response.sendRedirect("login.jsp");
     }
-    String id = (String)session.getAttribute("user_id");
-    String name = (String)session.getAttribute("user_name");
+    //String id = (String)session.getAttribute("user_id");
+    //String name = (String)session.getAttribute("user_name");
     %>
 	<%@include file="/include/header.jsp" %>
 	<section>
